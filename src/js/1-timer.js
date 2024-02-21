@@ -21,10 +21,8 @@ const options = {
   defaultDate: new Date(),
   minuteIncrement: 1,
   onClose(selectedDates) {
-    console.log(selectedDates[0]);
-  },
-  onClose(selectedDates) {
     userSelectedDate = selectedDates[0];
+
     if (selectedDates[0] <= Date.now()) {
       btnStart.disabled = true;
       iziToast.show({
@@ -40,6 +38,8 @@ const options = {
       });
     } else {
       btnStart.disabled = false;
+
+      console.log(selectedDates[0]);
     }
   },
 };
